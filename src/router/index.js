@@ -11,11 +11,6 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/component',
-      name: 'component',
-      component: () => import('../views/ComponentView.vue')
-    },
-    {
       path: '/apicomponent',
       name: 'apicomponent',
       component: () => import('../views/ApiComponent.vue')

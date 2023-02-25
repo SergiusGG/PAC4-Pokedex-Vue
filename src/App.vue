@@ -8,8 +8,12 @@ const tema= ref("light")
 
 const changeTema = (e) =>{
   document.body.className=e.target.value;
+  // localStorage.setItem(e.target.value)
+  // document.className.add(localStorage.getItem(e.target.value))
+ 
+ localStorage.setItem("tema", e.target.value)
   // localStorage.getItem(e.target.value)=true;
-  // console.log(e.target.value);
+  console.log(e.target.value);
 }
 
 // const changeTema = e => document.body.className=e.target.value; ES6
@@ -59,6 +63,9 @@ Tema {{ tema }} -->
 </template>
 
 <style scoped>
+.logo{
+  width: auto;
+}
 :root{
   --text-color:#111;
   --bg-color:#eee;
@@ -66,9 +73,9 @@ Tema {{ tema }} -->
   --text-card:#333;
 }
 .tema.dark{
-  --bg-color:#181818;
-  --text-color:hsla(160, 100%, 37%, 1);
-  --bg-card:hsla(160, 100%, 37%, 1);
+  --bg-color:#252424;
+  --text-color:rgba(0, 189, 126, 0.471);
+  --bg-card:rgb(157, 215, 196);
   --text-card:#222
 }
 .tema.light{

@@ -70,11 +70,11 @@ li:hover {
   color: aquamarine;
 }
 .cards{
-  padding: 5%;
+  /* padding: 5%; */
   margin: 0 auto;
     display: flex;
     gap: 2rem;
-    max-width: 50vw;
+    max-width: 60vw;
     flex-wrap: wrap;
 }
 </style>

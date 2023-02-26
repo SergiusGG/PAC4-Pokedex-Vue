@@ -12,8 +12,8 @@ console.log(props.info.name);
     </h2>
     <p>Número pokedex: {{ props.info.id }}</p>
     <img :src="props.info.sprites.front_default" alt="">
-    <p>Tipo: {{ props.info.types[0].type.name }}</p>
-    <p>Defensa física: {{ props.info.stats[2].base_stat }}</p>
+    <!-- <p>Tipo: {{ props.info.types[0].type.name }}</p>
+    <p>Defensa física: {{ props.info.stats[2].base_stat }}</p> -->
     <button>  <RouterLink to="/apicomponent">Volver</RouterLink></button>
 
    

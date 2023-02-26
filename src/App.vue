@@ -8,15 +8,10 @@ const tema= ref("light")
 
 const changeTema = (e) =>{
   document.body.className=e.target.value;
-  // localStorage.setItem(e.target.value)
-  // document.className.add(localStorage.getItem(e.target.value))
- 
- localStorage.setItem("tema", e.target.value)
-  // localStorage.getItem(e.target.value)=true;
-  console.log(e.target.value);
+  
 }
 
-// const changeTema = e => document.body.className=e.target.value; ES6
+
 
 </script>
 
@@ -24,17 +19,22 @@ const changeTema = (e) =>{
   <main class="tema" :class="tema">
 
   <header>
+  <RouterLink class="routerHeader" to="/">
     <img alt="Vue logo" class="logo" src="@/assets/Pokédex_logo.png" width="125" height="125" />
-<h1>Pokedex</h1>
+
+  </RouterLink>
+
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <!-- <RouterLink to="/prueba">Prueba</RouterLink> -->
+
+        <RouterLink to="/">Inicio</RouterLink>
         <!-- <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/for">For</RouterLink>
         <RouterLink to="/component">Component</RouterLink> -->
-        <RouterLink to="/apicomponent">Component API</RouterLink>
+        <RouterLink to="/apicomponent">Pokédex Nacional</RouterLink>
         <!-- <RouterLink to="/pokemonsearch">Buscar Pokemon</RouterLink> -->
 
         <!-- <RouterLink to="/prueba">Prueba</RouterLink> -->
@@ -48,10 +48,16 @@ const changeTema = (e) =>{
     </div>
 
     <div class="settings">
-      <label for="light">Light</label>
-      <label for="dark">Dark</label>
-<input type="radio" name="tema" id="light" value="light" v-model="tema" @change="changeTema" checked>
-<input type="radio" name="tema" id="dark" value="dark" v-model="tema" @change="changeTema">
+      <div>
+        <label class="pointer" for="light">Claro</label>
+        <input class="pointer" type="radio" name="tema" id="light" value="light" v-model="tema" @change="changeTema" checked>
+
+      </div>
+      <div>
+        <label class="pointer" for="dark">Oscuro</label>
+<input class="pointer" type="radio" name="tema" id="dark" value="dark" v-model="tema" @change="changeTema">
+      </div>
+      
 <!-- <br>
 Tema {{ tema }} -->
     </div>
@@ -63,6 +69,10 @@ Tema {{ tema }} -->
 </template>
 
 <style scoped>
+
+.routerHeader:hover{
+background-color:transparent;
+}
 .logo{
   width: auto;
 }
@@ -99,20 +109,32 @@ Tema {{ tema }} -->
 }
 
 
+.settings{
+  display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
 /* 
 @media (min-width: 1024px) {
   
 } */
-
 header {
-  line-height: 1.5;
+    display: grid;
+    place-items: center;
+    padding-right: calc(var(--section-gap) / 2);
+    line-height: 1.5;
   max-height: 100vh;
-}
+  }
 
-.logo {
+/* header {
+ 
+} */
+
+/* .logo {
   display: block;
   margin: 0 auto 2rem;
-}
+} */
 
 nav {
   width: 100%;
@@ -144,20 +166,25 @@ nav a:first-of-type {
     /* display: grid; */
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
-  }
-  .settings{
+   }
+  /* .settings{
   display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}  */
+.pointer{
+  cursor: pointer;
 }
 
-  header {
+  /* header {
     display: grid;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
-  }
+  } */
 
-  .logo {
+  /* .logo {
     margin: 0 2rem 0 0;
-  }
+  } */
 
   header .wrapper {
     display: flex;

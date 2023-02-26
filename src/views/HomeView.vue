@@ -16,47 +16,71 @@ const search = ref("")
 
 onMounted(() => {
 
-  for(let i=1;i<=10; i++){
-    pokeApi.getListPkm().then((response) => {
+  // for(let i=1;i<=10; i++){
+    pokeApi.getBulbasaur().then((response) => {
     console.log(response.data)
     pokes.value.push(response.data)
     
 
 })
-  }
+
+pokeApi.getChar().then((response) => {
+    console.log(response.data)
+    pokes.value.push(response.data)
+    
+
+})
+pokeApi.getSqrt().then((response) => {
+    console.log(response.data)
+    pokes.value.push(response.data)
+    
+
+})  
+
+pokeApi.getPika().then((response) => {
+    console.log(response.data)
+    pokes.value.push(response.data)
+    
+
+})
+  
    
 })
 
-// const filtroPkm = computed(
-//   () => {
-//     return pokes.value.filter((poke) =>{
-//       return poke.name.toLowerCase().includes(search.value.toLocaleLowerCase())
-//     })
-//   }
-// )
 
 
 </script>
 
 <template>
-  <main>
+  <main class="container">
 
 
 
-<h1>Pokedex</h1>
-  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima maiores iste debitis fugit perferendis reprehenderit saepe temporibus quibusdam animi doloremque sint, nemo repellat quis quo illo aliquam aliquid nobis praesentium?
-  Iure quaerat saepe accusamus magnam excepturi nemo accusantium sint quia magni nostrum, ratione eaque eos tenetur, et repellendus enim reiciendis dolor. Id dicta reiciendis optio eos ducimus autem dignissimos obcaecati?
-  Soluta necessitatibus unde dolorem nobis assumenda architecto earum optio! Nihil dignissimos aliquid inventore explicabo ipsum corporis deserunt vero incidunt placeat adipisci esse eligendi rerum saepe quos, ullam, dolor numquam architecto!
-  Ad illum eveniet aspernatur distinctio sunt fugit culpa, perspiciatis ipsam assumenda maiores nostrum recusandae debitis amet iure harum magni facere laborum incidunt itaque quae. Voluptates cupiditate error repudiandae non pariatur.
-  Totam possimus neque quis dolore quo provident velit, vero dicta. Doloribus blanditiis amet id quasi nihil quae sit! Non alias consequatur quos eveniet, blanditiis dolore molestias animi consectetur pariatur ea!
-  Commodi rem magnam itaque laboriosam nihil modi repudiandae est beatae aliquid! Laboriosam odit, blanditiis in, temporibus exercitationem voluptatem dolore impedit veritatis facilis totam numquam eos possimus hic modi atque! Quam?</p>
+<h1>Benvenido a la Pókedex</h1>
+<p>Todo comenzó en el año 1996 en Japón. Ese año se lanzaron las ediciones Rojo y Verde. Posteriormente se lanzó una edición especial llamada Azul.
+  En 1998 se lanzaron las ediciones Azul y Rojo en occidente y ese mismo año llegaría a Japón la edición Amarilla, que en occidente se puso a la venta en 1999.
+  Esto fue el incio del fenómeno Pokemon que aún a día de hoy sigue siendo la franquicia más popular.
+  Varias generaciones crecimos con estos pequeños monstruos pero nada sería lo mismo sin los pokémon más icónicos de todos:
+  <ul>
+    <li>Pikachu</li>
+    <li>Charmander</li>
+    <li>Squirtle</li>
+    <li>Y sobre todo, Bulbasaur</li>
+  </ul>
+  En esta página de inicio se muestra la información detallada de estos pokémon.
+  <br>
+
+  Además, en la pestaña de Pokédex Nacional puedes introducir un número mediante un prompt para que se muestre una lista con pokémon aleatorios.
+  También puedes utilizar el buscador para encontrar un pokémon que se encuentre en esa lista y al clicar en la tarjeta se mostrarán datos adicionales con una tarjeta que se voltea al pasar el ratón por encima.
+Estas tarjetas incluyen información como el nombre del pokémon, su número en la pokédex nacional, su sprite, sus stats y tienen un sombreado que coincide con su tipo (o su primer tipo en caso de tener más de uno)
+  <br>
+
+  Por último, se encuentra un modo oscuro para que puedas seleccionar el tono de visualización más adecuado.
+</p>
    
 
   <div class="new">
-    <h1>Pokedex Component</h1>
-    <input v-model="search" type="text" placeholder="Buscar pokemon">
-   <!-- {{ search }} -->
-   <br>
+    
     <section class="cards">
       <PokeCard v-for="pokemons in pokes" :key="pokemons.id" :info="pokemons"
     />
@@ -72,9 +96,9 @@ onMounted(() => {
 li {
   cursor: pointer;
 }
-li:hover {
+/* li:hover {
   color: aquamarine;
-}
+} */
 .card{
     display: flex;
     gap: 2rem;
@@ -89,9 +113,9 @@ input{
 li {
   cursor: pointer;
 }
-li:hover {
+/* li:hover {
   color: aquamarine;
-}
+} */
 .cards{
   /* padding: 5%; */
   margin: 0 auto;
@@ -99,5 +123,14 @@ li:hover {
     gap: 2rem;
     max-width: 60vw;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.container{
+  padding: 5%;
+    gap: 5%;
+    display: grid;
+}
+h1{
+  text-align: center;
 }
 </style>

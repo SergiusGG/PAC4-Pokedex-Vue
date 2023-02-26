@@ -14,8 +14,8 @@ const search = ref("")
 
 
 onMounted(() => {
-
-  for(let i=1;i<=10; i++){
+// let value=+prompt("Número pokemon")
+  for(let i=1;i<=7; i++){
     pokeApi.getPkm().then((response) => {
     console.log(response.data)
     pokes.value.push(response.data)
@@ -40,9 +40,9 @@ const filtroPkm = computed(
 
 <template>
   <div class="new">
-    <h1>Pokedex Component</h1>
+    <h1>Pokédex Nacional</h1>
     <input v-model="search" type="text" placeholder="Buscar pokemon">
-   {{ search }}
+   <!-- {{ search }} -->
    <br>
     <section class="cards">
       <PokeCard v-for="pokemons in filtroPkm" :key="pokemons.id" :info="pokemons"
@@ -70,11 +70,11 @@ li:hover {
   color: aquamarine;
 }
 .cards{
-  padding: 5%;
+  /* padding: 5%; */
   margin: 0 auto;
     display: flex;
     gap: 2rem;
-    max-width: 50vw;
+    max-width: 60vw;
     flex-wrap: wrap;
 }
 </style>

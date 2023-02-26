@@ -15,10 +15,20 @@ const router = createRouter({
       name: 'apicomponent',
       component: () => import('../views/ApiComponent.vue')
     },
+    // {
+    //   path: '/poke/:pokemonsName',
+    //   name: POKE,
+    //   component: () => import('../views/CardVue.vue')
+    // },
+    // {
+    //   path: '/prueba',
+    //   name: "prueba",
+    //   component: () => import('../views/Prueba.vue')
+    // },
     {
       path: '/poke/:pokemonsName',
       name: POKE,
-      component: () => import('../views/CardVue.vue')
+      component: () => import('../views/CardFnB.vue')
     },
   
    

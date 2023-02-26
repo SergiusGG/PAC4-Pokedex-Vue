@@ -7,7 +7,6 @@ console.log(props.info.name);
 
 <template>
   <article class="card" :class="props.info.types[0].type.name">
-    Soy un pokemon
     <h2>Nombre:
        {{ props.info.name }}
     </h2>
@@ -32,7 +31,6 @@ console.log(props.info.name);
   border: 1px solid black;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 0 5px 5 pc #eee;
   width: fit-content;
   min-width: 250px;
   max-width: 250px;

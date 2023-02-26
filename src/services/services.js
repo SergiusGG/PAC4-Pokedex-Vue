@@ -32,11 +32,29 @@ export default{
 
     },
 
-    getListPkm(){
+    getBulbasaur(){
             
-            return pokeApi.get("/"+Math.round(Math.random()*10));
+            return pokeApi.get("/bulbasaur");
     
     
-    }
+    },
+    getChar(){
+            
+        return pokeApi.get("/charmander");
+
+
+},
+getSqrt(){
+            
+    return pokeApi.get("/squirtle");
+
+
+},
+getPika(){
+            
+    return pokeApi.get("/pikachu");
+
+
+}
     
 }

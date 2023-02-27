@@ -12,7 +12,7 @@ const pokeApi = axios.create({
 export default{
     getPkm(){
    
-        return pokeApi.get("/"+Math.round(Math.random()*1279));
+        return pokeApi.get("/"+Math.round(Math.random()*1008));
 
       
 

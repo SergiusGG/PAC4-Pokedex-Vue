@@ -1,15 +1,24 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import { storage } from './hooks/useTheme';
 
 
-
-const tema= ref("light")
-
+const tema=ref()
 const changeTema = (e) =>{
+  tema.value = e.target.value
   document.body.className=e.target.value;
-  
+  storage.set('tema', tema.value)
 }
+
+onMounted(() => { 
+  tema.value = storage.get('tema')
+  if(!tema.value){ 
+    storage.set('tema', 'light')
+  }
+})
+
+
 
 
 
@@ -28,17 +37,11 @@ const changeTema = (e) =>{
       <HelloWorld msg="You did it!" />
 
       <nav>
-        <!-- <RouterLink to="/prueba">Prueba</RouterLink> -->
 
         <RouterLink to="/">Inicio</RouterLink>
-        <!-- <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/for">For</RouterLink>
-        <RouterLink to="/component">Component</RouterLink> -->
+     
         <RouterLink to="/apicomponent">Pokédex Nacional</RouterLink>
-        <!-- <RouterLink to="/pokemonsearch">Buscar Pokemon</RouterLink> -->
-
-        <!-- <RouterLink to="/prueba">Prueba</RouterLink> -->
-
+   
 
 
 
@@ -96,11 +99,12 @@ background-color:transparent;
 }
 
 .tema{
-  width: 72vw;
+  width: 100%;
+  min-height: 100vh;
   background-color: var(--bg-color);
   color: var(--text-color);
   /* display: grid; */
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
@@ -165,7 +169,7 @@ nav a:first-of-type {
   .tema {
     /* display: grid; */
     grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
    }
   /* .settings{
   display: flex;

@@ -96,9 +96,9 @@ Estas tarjetas incluyen información como el nombre del pokémon, su número en 
 li {
   cursor: pointer;
 }
-/* li:hover {
-  color: aquamarine;
-} */
+li:hover {
+  color: black;
+}
 .card{
     display: flex;
     gap: 2rem;

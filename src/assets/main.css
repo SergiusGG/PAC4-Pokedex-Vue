@@ -4,7 +4,7 @@
   /* max-width: 1280px; */
   margin: 0 auto;
   /* padding: 2rem; */
-width: 100%;
+  width: 100%;
   font-weight: normal;
 }
 
@@ -28,80 +28,96 @@ a,
   }
 
   /* #app { */
-    /* display: grid;
+  /* display: grid;
     grid-template-columns: 1fr 1fr; */
-    /* padding: 0 2rem; */
+  /* padding: 0 2rem; */
   /* } */
 }
 
-.water{
-  box-shadow:0 0  10px 5px #6390F0;
+.water {
+  box-shadow: 0 0 10px 5px #6390F0;
 }
-.flying{
+
+.flying {
   box-shadow: 0 0 10px 5px #A890F0;
 }
-.ground{
-  box-shadow:0 0  10px 5px #E0C068;
+
+.ground {
+  box-shadow: 0 0 10px 5px #E0C068;
 
 }
-.electric{
-  box-shadow:0 0  10px 5px #F8D030;
+
+.electric {
+  box-shadow: 0 0 10px 5px #F8D030;
 
 }
-.fire{
-  box-shadow:0 0  10px 5px #F08030;
+
+.fire {
+  box-shadow: 0 0 10px 5px #F08030;
 
 }
-.grass{
-  box-shadow:0 0  10px 5px #78C850
-;
+
+.grass {
+  box-shadow: 0 0 10px 5px #78C850;
 
 }
-.dragon{
-  box-shadow:0 0  10px 5px #7038F8;
+
+.dragon {
+  box-shadow: 0 0 10px 5px #7038F8;
 
 }
-.fairy{
-  box-shadow:0 0  10px 5px #EE99AC;
+
+.fairy {
+  box-shadow: 0 0 10px 5px #EE99AC;
 
 }
-.steel{
-  box-shadow:0 0  10px 5px #B8B8D0;
+
+.steel {
+  box-shadow: 0 0 10px 5px #B8B8D0;
 
 }
-.normal{
-  box-shadow:0 0  10px 5px #A8A878;
+
+.normal {
+  box-shadow: 0 0 10px 5px #A8A878;
 
 }
-.rock{
-  box-shadow:0 0  10px 5px #B8A038;
+
+.rock {
+  box-shadow: 0 0 10px 5px #B8A038;
 
 }
-.poison{
-  box-shadow:0 0  10px 5px #A040A0;
+
+.poison {
+  box-shadow: 0 0 10px 5px #A040A0;
 
 }
-.bug{
-  box-shadow:0 0  10px 5px #A8B820;
+
+.bug {
+  box-shadow: 0 0 10px 5px #A8B820;
 
 }
-.ghost{
-  box-shadow:0 0  10px 5px #705898;
+
+.ghost {
+  box-shadow: 0 0 10px 5px #705898;
 
 }
-.dark{
-  box-shadow:0 0  10px 5px #705848;
+
+.dark {
+  box-shadow: 0 0 10px 5px #705848;
 
 }
-.psychic{
-  box-shadow:0 0  10px 5px #F85888;
+
+.psychic {
+  box-shadow: 0 0 10px 5px #F85888;
 
 }
-.fighting{
-  box-shadow:0 0  10px 5px #C03028;
+
+.fighting {
+  box-shadow: 0 0 10px 5px #C03028;
 
 }
-.ice{
-  box-shadow:0 0  10px 5px #98D8D8;
+
+.ice {
+  box-shadow: 0 0 10px 5px #98D8D8;
 
 }

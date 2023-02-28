@@ -1,23 +1,24 @@
 <script setup>
-
 const props = defineProps(["info"]);
 console.log(props.info.name);
 </script>
 
 <template>
   <article class="card" :class="props.info.types[0].type.name">
-    <h2>Nombre:
-       {{ props.info.name }}
+    <h2>
+      Nombre:
+      {{ props.info.name }}
     </h2>
-    <p>Número pokedex: {{ props.info.id }}</p>
-    <img :src="props.info.sprites.front_default" alt="">
-    <p v-if="props.info.types.length>=2">
+    <p>Número pokédex: {{ props.info.id }}</p>
+    <img :src="props.info.sprites.front_default" alt="" />
+    <p v-if="props.info.types.length >= 2">
       Tipo 1: {{ props.info.types[0].type.name }}
-      <br>
+      <br />
       Tipo 2: {{ props.info.types[1].type.name }}
-
     </p>
-    <p v-else-if="props.info.types.length==1">Tipo: {{ props.info.types[0].type.name }}</p>
+    <p v-else-if="props.info.types.length == 1">
+      Tipo: {{ props.info.types[0].type.name }}
+    </p>
     <p>HP: {{ props.info.stats[0].base_stat }}</p>
     <p>Ataque físico: {{ props.info.stats[1].base_stat }}</p>
     <p>Defensa física: {{ props.info.stats[2].base_stat }}</p>
@@ -25,14 +26,12 @@ console.log(props.info.name);
     <p>Defensa especial: {{ props.info.stats[4].base_stat }}</p>
     <p>Velocidad: {{ props.info.stats[5].base_stat }}</p>
 
-    <button>  <RouterLink to="/apicomponent">Volver</RouterLink></button>
-
-   
+    <button><RouterLink to="/apicomponent">Volver</RouterLink></button>
   </article>
 </template>
 
 <style scoped>
-h1{
+h1 {
   margin: 0 auto;
 }
 .card {
@@ -50,5 +49,4 @@ h1{
   background-color: var(--bg-card);
   color: var(--text-card);
 }
-
 </style>

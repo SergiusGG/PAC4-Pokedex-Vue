@@ -1,103 +1,106 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import { ref, onMounted } from 'vue';
-import { storage } from './hooks/useTheme';
+import { RouterLink, RouterView } from "vue-router";
+import { ref, onMounted } from "vue";
+import { storage } from "./hooks/useTheme";
 
+const tema = ref();
+const changeTema = (e) => {
+  tema.value = e.target.value;
+  document.body.className = e.target.value;
+  storage.set("tema", tema.value);
+};
 
-const tema=ref()
-const changeTema = (e) =>{
-  tema.value = e.target.value
-  document.body.className=e.target.value;
-  storage.set('tema', tema.value)
-}
-
-onMounted(() => { 
-  tema.value = storage.get('tema')
-  if(!tema.value){ 
-    storage.set('tema', 'light')
+onMounted(() => {
+  tema.value = storage.get("tema");
+  if (!tema.value) {
+    storage.set("tema", "light");
   }
-})
-
-
-
-
-
+});
 </script>
 
 <template>
   <main class="tema" :class="tema">
+    <header>
+      <RouterLink class="routerHeader" to="/">
+        <img
+          alt="Vue logo"
+          class="logo"
+          src="@/assets/Pokédex_logo.png"
+          width="125"
+          height="125"
+        />
+      </RouterLink>
 
-  <header>
-  <RouterLink class="routerHeader" to="/">
-    <img alt="Vue logo" class="logo" src="@/assets/Pokédex_logo.png" width="125" height="125" />
+      <div class="wrapper">
+        <HelloWorld msg="You did it!" />
 
-  </RouterLink>
+        <nav>
+          <RouterLink to="/">Inicio</RouterLink>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-
-        <RouterLink to="/">Inicio</RouterLink>
-     
-        <RouterLink to="/apicomponent">Pokédex Nacional</RouterLink>
-   
-
-
-
-
-
-      </nav>
-    </div>
-
-    <div class="settings">
-      <div>
-        <label class="pointer" for="light">Claro</label>
-        <input class="pointer" type="radio" name="tema" id="light" value="light" v-model="tema" @change="changeTema" checked>
-
+          <RouterLink to="/apicomponent">Pokédex Nacional</RouterLink>
+        </nav>
       </div>
-      <div>
-        <label class="pointer" for="dark">Oscuro</label>
-<input class="pointer" type="radio" name="tema" id="dark" value="dark" v-model="tema" @change="changeTema">
+
+      <div class="settings">
+        <div>
+          <label class="pointer" for="light">Claro</label>
+          <input
+            class="pointer"
+            type="radio"
+            name="tema"
+            id="light"
+            value="light"
+            v-model="tema"
+            @change="changeTema"
+            checked
+          />
+        </div>
+        <div>
+          <label class="pointer" for="dark">Oscuro</label>
+          <input
+            class="pointer"
+            type="radio"
+            name="tema"
+            id="dark"
+            value="dark"
+            v-model="tema"
+            @change="changeTema"
+          />
+        </div>
       </div>
-      
+    </header>
 
-    </div>
-  </header>
-
-  <RouterView />
-</main>
-
+    <RouterView />
+  </main>
 </template>
 
 <style scoped>
-
-.routerHeader:hover{
-background-color:transparent;
+.routerHeader:hover {
+  background-color: transparent;
 }
-.logo{
+.logo {
   width: auto;
 }
-:root{
-  --text-color:#111;
-  --bg-color:#eee;
-  --bg-card:#ddd;
-  --text-card:#333;
+:root {
+  --text-color: #111;
+  --bg-color: #eee;
+  --bg-card: #ddd;
+  --text-card: #333;
 }
-.tema.dark{
-  --bg-color:#252424;
-  --text-color:rgba(0, 189, 126, 0.471);
-  --bg-card:rgb(157, 215, 196);
-  --text-card:#222
+.tema.dark {
+  --bg-color: #252424;
+  --text-color: rgba(0, 189, 126, 0.471);
+  --bg-card: rgb(157, 215, 196);
+  --text-card: #222;
 }
-.tema.light{
-  --text-color:#111;
-  --bg-color:#eee;
-  --bg-card:#ddd;
-  --text-card:#333;
+.tema.light {
+  --text-color: #111;
+  --bg-color: #eee;
+  --bg-card: #ddd;
+  --text-card: #333;
 }
 
-.tema{
+.tema {
   width: 100%;
   min-height: 100vh;
   background-color: var(--bg-color);
@@ -106,26 +109,21 @@ background-color:transparent;
   padding: 2rem;
   font-weight: normal;
   transition: color 0.3s, background-color 0.3s;
-
 }
 
-
-.settings{
+.settings {
   display: flex;
-    margin: 0 auto;
-    justify-content: center;
+  margin: 0 auto;
+  justify-content: center;
 }
-
 
 header {
-    display: grid;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-    line-height: 1.5;
+  display: grid;
+  place-items: center;
+  padding-right: calc(var(--section-gap) / 2);
+  line-height: 1.5;
   max-height: 100vh;
-  }
-
-
+}
 
 nav {
   width: 100%;
@@ -155,13 +153,11 @@ nav a:first-of-type {
 @media (min-width: 1024px) {
   .tema {
     grid-template-columns: 1fr 1fr;
-   }
- 
-.pointer{
-  cursor: pointer;
-}
+  }
 
-  
+  .pointer {
+    cursor: pointer;
+  }
 
   header .wrapper {
     display: flex;
@@ -174,7 +170,7 @@ nav a:first-of-type {
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
-text-align: center;
+    text-align: center;
     padding: 1rem 0;
     margin-top: 1rem;
   }

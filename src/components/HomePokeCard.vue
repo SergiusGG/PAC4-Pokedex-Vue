@@ -1,5 +1,5 @@
 <script setup>
-import { POKEHOME } from '../services/routes';
+import { POKEHOME } from "../services/routes";
 
 const props = defineProps(["info"]);
 console.log(props.info.name);
@@ -7,19 +7,24 @@ console.log(props.info.name);
 
 <template>
   <article class="card" :class="props.info.types[0].type.name">
-    <h2>Nombre:
-       {{ props.info.name }}
+    <h2>
+      Nombre:
+      {{ props.info.name }}
     </h2>
-    <p>Número pokedex: {{ props.info.id }}</p>
-    
+    <p>Número pokédex: {{ props.info.id }}</p>
 
-    <img :src="props.info.sprites.front_default" alt="">
+    <img :src="props.info.sprites.front_default" alt="" />
 
     <button
-      @click="$router.push({ name: POKEHOME, params: { pokemonsName: props.info.name } })"
-    >Ver más</button>
-
-
+      @click="
+        $router.push({
+          name: POKEHOME,
+          params: { pokemonsName: props.info.name },
+        })
+      "
+    >
+      Ver más
+    </button>
   </article>
 </template>
 
@@ -37,10 +42,8 @@ console.log(props.info.name);
   background-color: var(--bg-card);
   color: var(--text-card);
 }
-.card button{
-
-    margin-top: auto ;
-    cursor: pointer;
+.card button {
+  margin-top: auto;
+  cursor: pointer;
 }
-
 </style>

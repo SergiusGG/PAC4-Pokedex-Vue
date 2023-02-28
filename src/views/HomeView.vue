@@ -1,12 +1,11 @@
 <script setup>
 import pokeApi from "../services/services.js"
 import HomePokeCard from "../components/HomePokeCard.vue"
-import { ref, onMounted, computed } from "vue";
+import { ref, onMounted } from "vue";
 
 
 const pokes =ref([])
 
-const search = ref("")
 
 
 
@@ -71,7 +70,8 @@ pokeApi.getPika().then((response) => {
   Además, en la pestaña de Pokédex Nacional puedes introducir un número mediante un prompt para que se muestre una lista con pokémon aleatorios.
   También puedes utilizar el buscador para encontrar un pokémon que se encuentre en esa lista y al clicar en la tarjeta se mostrarán datos adicionales con una tarjeta que se voltea al pasar el ratón por encima.
 Estas tarjetas incluyen información como el nombre del pokémon, su número en la pokédex nacional, su sprite, sus stats y tienen un sombreado que coincide con su tipo (o su primer tipo en caso de tener más de uno)
-  <br>
+  
+<br>
 
   Por último, se encuentra un modo oscuro para que puedas seleccionar el tono de visualización más adecuado.
 </p>

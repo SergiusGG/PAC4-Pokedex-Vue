@@ -2,10 +2,9 @@
 
 import pokeApi from "../services/services.js"
 import { ref, onMounted } from "vue";
-import DetailsBack from "../components/DetailsBack.vue"
-
+import HomeDetailsBack from "../components/HomeDetailsBack.vue"
 import { useRoute } from 'vue-router';
-import PokeCardDetails from "../components/PokeCardDetails.vue";
+import HomePokeCardDetails from "../components/HomePokeCardDetails.vue";
 
 const route=useRoute()
 
@@ -26,7 +25,6 @@ onMounted(() => {
     console.log("pokemon");
     pokeApi.getOnePkm(pokemonsName).then((response) => {
     console.log(response.data)
-    // pokes2.value=response.data
     pokes2.value.push(response.data)
 console.log(pokes2.value);
 console.log(props);
@@ -43,11 +41,11 @@ console.log(props);
     <div class="content">
   
 
-    <PokeCardDetails class="front"  v-for="pokemons in pokes2" :key="pokemons.id" :info="pokemons"
+    <HomePokeCardDetails class="front"  v-for="pokemons in pokes2" :key="pokemons.id" :info="pokemons"
     />
 
 
-    <DetailsBack class="back"  v-for="pokemons in pokes2" :key="pokemons.id" :info="pokemons"
+    <HomeDetailsBack class="back"  v-for="pokemons in pokes2" :key="pokemons.id" :info="pokemons"
     /> 
 
 </div>

@@ -1,5 +1,5 @@
 <script setup>
-import { POKE } from '../services/routes';
+import { POKEHOME } from '../services/routes';
 
 const props = defineProps(["info"]);
 console.log(props.info.name);
@@ -16,7 +16,7 @@ console.log(props.info.name);
     <img :src="props.info.sprites.front_default" alt="">
 
     <button
-      @click="$router.push({ name: POKE, params: { pokemonsName: props.info.name } })"
+      @click="$router.push({ name: POKEHOME, params: { pokemonsName: props.info.name } })"
     >Ver más</button>
 
 

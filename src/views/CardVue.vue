@@ -1,9 +1,6 @@
 <script setup>
 import pokeApi from "../services/services.js"
 import { ref, onMounted } from "vue";
-import PokeCard from "../components/PokeCard.vue";
-
-
 import { useRoute } from 'vue-router';
 import PokeCardDetails from "../components/PokeCardDetails.vue";
 

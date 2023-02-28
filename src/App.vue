@@ -61,8 +61,7 @@ onMounted(() => {
 <input class="pointer" type="radio" name="tema" id="dark" value="dark" v-model="tema" @change="changeTema">
       </div>
       
-<!-- <br>
-Tema {{ tema }} -->
+
     </div>
   </header>
 
@@ -103,8 +102,6 @@ background-color:transparent;
   min-height: 100vh;
   background-color: var(--bg-color);
   color: var(--text-color);
-  /* display: grid; */
-  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
@@ -119,10 +116,7 @@ background-color:transparent;
     justify-content: center;
 }
 
-/* 
-@media (min-width: 1024px) {
-  
-} */
+
 header {
     display: grid;
     place-items: center;
@@ -131,14 +125,7 @@ header {
   max-height: 100vh;
   }
 
-/* header {
- 
-} */
 
-/* .logo {
-  display: block;
-  margin: 0 auto 2rem;
-} */
 
 nav {
   width: 100%;
@@ -167,28 +154,14 @@ nav a:first-of-type {
 
 @media (min-width: 1024px) {
   .tema {
-    /* display: grid; */
     grid-template-columns: 1fr 1fr;
-    /* padding: 0 2rem; */
    }
-  /* .settings{
-  display: flex;
-    margin: 0 auto;
-    justify-content: center;
-}  */
+ 
 .pointer{
   cursor: pointer;
 }
 
-  /* header {
-    display: grid;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  } */
-
-  /* .logo {
-    margin: 0 2rem 0 0;
-  } */
+  
 
   header .wrapper {
     display: flex;

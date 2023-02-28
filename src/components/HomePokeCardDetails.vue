@@ -25,7 +25,7 @@ console.log(props.info.name);
     <p>Defensa especial: {{ props.info.stats[4].base_stat }}</p>
     <p>Velocidad: {{ props.info.stats[5].base_stat }}</p>
 
-    <button>  <RouterLink to="/apicomponent">Volver</RouterLink></button>
+    <button>  <RouterLink to="/">Volver</RouterLink></button>
 
    
   </article>

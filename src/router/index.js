@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { DETAILS, HOME, POKE } from '../services/routes'
+import { DETAILS, HOME, POKE, POKEHOME } from '../services/routes'
 import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
@@ -30,7 +30,11 @@ const router = createRouter({
       name: POKE,
       component: () => import('../views/CardFnB.vue')
     },
-  
+    {
+      path: '/pokeHome/:pokemonsName',
+      name: POKEHOME,
+      component: () => import('../views/HomeCardFnB.vue')
+    },  
    
   ]
 })

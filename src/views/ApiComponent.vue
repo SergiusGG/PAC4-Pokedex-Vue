@@ -9,9 +9,22 @@ const pokes =ref([])
 const search = ref("")
 
 
-function loadPkm(){
-  pokes.value=[]
+// function loadPkm(){
+//   pokes.value=[]
 
+//   for(let i=1;i<=10; i++){
+//     pokeApi.getPkm().then((response) => {
+//     console.log(response.data)
+//     pokes.value.push(response.data)
+    
+
+// })
+//   }
+//   } 
+  
+// }
+
+onMounted(()=>{
   for(let i=1;i<=10; i++){
     pokeApi.getPkm().then((response) => {
     console.log(response.data)
@@ -20,11 +33,7 @@ function loadPkm(){
 
 })
   }
-  } 
-  
-// }
-
-
+})
 
 
 
@@ -43,7 +52,7 @@ const filtroPkm = computed(
 <template>
   <div class="new">
     <h1>Pokédex Nacional</h1>
-    <button @click="loadPkm">Cargar Pokémon</button>
+    <!-- <button @click="loadPkm">Cargar Pokémon</button> -->
 
     <input v-model="search" type="text" placeholder="Buscar pokemon">
    <!-- {{ search }} -->

@@ -1,7 +1,6 @@
 <script setup>
-import {services} from "../hooks/useFetchPkm.js"
 import pokeApi from "../services/services.js"
-import PokeCard from "../components/PokeCard.vue"
+import HomePokeCard from "../components/HomePokeCard.vue"
 import { ref, onMounted, computed } from "vue";
 
 
@@ -16,7 +15,6 @@ const search = ref("")
 
 onMounted(() => {
 
-  // for(let i=1;i<=10; i++){
     pokeApi.getBulbasaur().then((response) => {
     console.log(response.data)
     pokes.value.push(response.data)
@@ -82,7 +80,7 @@ Estas tarjetas incluyen información como el nombre del pokémon, su número en 
   <div class="new">
     
     <section class="cards">
-      <PokeCard v-for="pokemons in pokes" :key="pokemons.id" :info="pokemons"
+      <HomePokeCard v-for="pokemons in pokes" :key="pokemons.id" :info="pokemons"
     />
     </section>
     </div>

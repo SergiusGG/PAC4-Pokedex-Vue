@@ -10,7 +10,7 @@ console.log(props.info.name);
        {{ props.info.name }}
     </h2>
     <p>Número pokedex: {{ props.info.id }}</p>
-    <img :src="props.info.sprites.front_default" alt="">
+    <img :src="props.info.sprites.back_default" alt="">
     <p v-if="props.info.types.length>=2">
       Tipo 1: {{ props.info.types[0].type.name }}
       <br>
@@ -24,8 +24,7 @@ console.log(props.info.name);
     <p>Ataque especial: {{ props.info.stats[3].base_stat }}</p>
     <p>Defensa especial: {{ props.info.stats[4].base_stat }}</p>
     <p>Velocidad: {{ props.info.stats[5].base_stat }}</p>
-
-    <button>  <RouterLink to="/apicomponent">Volver</RouterLink></button>
+    <button>  <RouterLink to="/">Volver</RouterLink></button>
 
    
   </article>
@@ -49,6 +48,7 @@ h1{
   max-width: 250px;
   background-color: var(--bg-card);
   color: var(--text-card);
+  /* height: fit-content; */
 }
 
 </style>

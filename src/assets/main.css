@@ -27,9 +27,81 @@ a,
     place-items: center;
   }
 
-  #app {
+  /* #app { */
     /* display: grid;
     grid-template-columns: 1fr 1fr; */
     /* padding: 0 2rem; */
-  }
+  /* } */
+}
+
+.water{
+  box-shadow:0 0  10px 5px #6390F0;
+}
+.flying{
+  box-shadow: 0 0 10px 5px #A890F0;
+}
+.ground{
+  box-shadow:0 0  10px 5px #E0C068;
+
+}
+.electric{
+  box-shadow:0 0  10px 5px #F8D030;
+
+}
+.fire{
+  box-shadow:0 0  10px 5px #F08030;
+
+}
+.grass{
+  box-shadow:0 0  10px 5px #78C850
+;
+
+}
+.dragon{
+  box-shadow:0 0  10px 5px #7038F8;
+
+}
+.fairy{
+  box-shadow:0 0  10px 5px #EE99AC;
+
+}
+.steel{
+  box-shadow:0 0  10px 5px #B8B8D0;
+
+}
+.normal{
+  box-shadow:0 0  10px 5px #A8A878;
+
+}
+.rock{
+  box-shadow:0 0  10px 5px #B8A038;
+
+}
+.poison{
+  box-shadow:0 0  10px 5px #A040A0;
+
+}
+.bug{
+  box-shadow:0 0  10px 5px #A8B820;
+
+}
+.ghost{
+  box-shadow:0 0  10px 5px #705898;
+
+}
+.dark{
+  box-shadow:0 0  10px 5px #705848;
+
+}
+.psychic{
+  box-shadow:0 0  10px 5px #F85888;
+
+}
+.fighting{
+  box-shadow:0 0  10px 5px #C03028;
+
+}
+.ice{
+  box-shadow:0 0  10px 5px #98D8D8;
+
 }

@@ -1,5 +1,5 @@
 <script setup>
-import { POKE } from '../services/routes';
+
 
 const props = defineProps(["info"]);
 console.log(props.info.name);
@@ -11,9 +11,20 @@ console.log(props.info.name);
        {{ props.info.name }}
     </h2>
     <p>Número pokedex: {{ props.info.id }}</p>
-    <img :src="props.info.sprites.front_default" alt="">
-    <!-- <p>Tipo: {{ props.info.types[0].type.name }}</p>
-    <p>Defensa física: {{ props.info.stats[2].base_stat }}</p> -->
+    <img :src="props.info.sprites.back_default" alt="">
+    <p v-if="props.info.types.length>=2">
+      Tipo 1: {{ props.info.types[0].type.name }}
+      <br>
+      Tipo 2: {{ props.info.types[1].type.name }}
+
+    </p>
+    <p v-else-if="props.info.types.length==1">Tipo: {{ props.info.types[0].type.name }}</p>
+    <p>HP: {{ props.info.stats[0].base_stat }}</p>
+    <p>Ataque físico: {{ props.info.stats[1].base_stat }}</p>
+    <p>Defensa física: {{ props.info.stats[2].base_stat }}</p>
+    <p>Ataque especial: {{ props.info.stats[3].base_stat }}</p>
+    <p>Defensa especial: {{ props.info.stats[4].base_stat }}</p>
+    <p>Velocidad: {{ props.info.stats[5].base_stat }}</p>
     <button>  <RouterLink to="/apicomponent">Volver</RouterLink></button>
 
    
@@ -38,72 +49,7 @@ h1{
   max-width: 250px;
   background-color: var(--bg-card);
   color: var(--text-card);
+  /* height: fit-content; */
 }
-.water{
-  box-shadow:0 0  10px 5px blue;
-}
-.ground{
-  box-shadow:0 0  10px 5px brown;
 
-}
-.electric{
-  box-shadow:0 0  10px 5px yellow;
-
-}
-.fire{
-  box-shadow:0 0  10px 5px red;
-
-}
-.grass{
-  box-shadow:0 0  10px 5px green;
-
-}
-.dragon{
-  box-shadow:0 0  10px 5px purple;
-
-}
-.fairy{
-  box-shadow:0 0  10px 5px pink;
-
-}
-.steel{
-  box-shadow:0 0  10px 5px rgb(83, 82, 82);
-
-}
-.normal{
-  box-shadow:0 0  10px 5px rgba(255, 255, 255, 0.855);
-
-}
-.rock{
-  box-shadow:0 0  10px 5px burlywood;
-
-}
-.poison{
-  box-shadow:0 0  10px 5px rgb(42, 1, 42);
-
-}
-.bug{
-  box-shadow:0 0  10px 5px rgb(117, 186, 5);
-
-}
-.ghost{
-  box-shadow:0 0  10px 5px rgb(45, 21, 47);
-
-}
-.dark{
-  box-shadow:0 0  10px 5px rgb(0, 0, 0);
-
-}
-.psychic{
-  box-shadow:0 0  10px 5px rgb(179, 39, 123);
-
-}
-.fighting{
-  box-shadow:0 0  10px 5px rgb(255, 93, 6);
-
-}
-.ice{
-  box-shadow:0 0  10px 5px rgb(9, 169, 205);
-
-}
 </style>
